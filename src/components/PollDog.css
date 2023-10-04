@@ -1,0 +1,38 @@
+.brands-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: crimson;
+    color: white
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.dropdown {
+    padding: 12px;
+    position: relative;
+}
+
+.dropdown:hover .brands {
+    display: block;
+}
+
+.second-dropdown:hover .brands {
+    display: block;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.not-filled-form-container {
+    text-align: center;
+}
+.not-filled-form-p {
+    color: red;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}

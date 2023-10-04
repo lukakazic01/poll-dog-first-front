@@ -1,0 +1,16 @@
+.brands {
+    position: absolute;
+    display: none;
+    top: 40px;
+    color: black;
+    right: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 grey;
+    z-index: 20;
+    background-color: white;
+}
+
+.ingredients {
+    cursor: pointer;
+    padding: 12px;
+}

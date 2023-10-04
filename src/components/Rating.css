@@ -1,0 +1,43 @@
+.rating-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.star-container {
+    display: flex;
+}
+
+.star {
+    cursor: pointer;
+    color: rgba(220, 220, 220);
+}
+
+.star-container-inner {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.rating-input {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid rgba(220,220,220);
+    border-radius: 4px;
+}
+
+.rating-input:focus {
+    outline: none;
+    border: 2px solid crimson;
+}
+
+.btn-submit {
+    color: white;
+    margin-top: 20px;
+    background-color: crimson;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
