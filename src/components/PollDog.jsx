@@ -1,9 +1,11 @@
-import React, {useRef, useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './PollDog.css'
-import star from '../assets/icons8-star-50.png'
 import Dropdown from "./Dropdown.jsx";
 import Rating from "./Rating.jsx";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const BrandsComponent = () => {
     const brands = { smoothie: ['Raspberry', 'Mango', 'Aronia'], joy: ['Multivitamin', 'Red fruits'] };
     const [isRatingOpened, setIsRatingOpened] = useState(false);
@@ -11,6 +13,8 @@ const BrandsComponent = () => {
     const [ratingComment, setRatingComment] = useState('');
     const [selectedRating, setSelectedRating] = useState(null);
     const [error, setError] = useState(false);
+    const [loader, setLoader] = useState(false);
+
     const handleOpeningRating = (product) => {
         setIsRatingOpened(true);
         setSelectedProduct(product);
@@ -30,7 +34,7 @@ const BrandsComponent = () => {
             setTimeout(() => setError(false) ,2000)
             return;
         }
-
+        setLoader(true)
         setSelectedRating(null);
         setRatingComment('');
         setIsRatingOpened(false);
@@ -50,8 +54,19 @@ const BrandsComponent = () => {
             });
 
             console.log(response.data);
+            toast.success('Thank you for submitting review :)',{
+                position: "bottom-center",
+                autoClose: 3000,
+                theme: "colored",
+            })
         } catch (error) {
-            console.error(error);
+            toast.error('An error occurred while sending data',{
+                position: "bottom-center",
+                autoClose: 3000,
+                theme: "colored",
+            })
+        } finally {
+            setLoader(false)
         }
     };
 
@@ -69,16 +84,24 @@ const BrandsComponent = () => {
                     </Dropdown>
                 </div>
             </div>
-            {isRatingOpened && (
-                <Rating handleStarRating={handleStarRating}
-                        handleSettingComment={handleSettingComment}
-                        handleSubmit={handleSubmit}>
-                          <p className="product-title">Rate product {selectedProduct}</p>
-                </Rating>
-            )}
-            {error && (
-                <div className="not-filled-form-container">
-                    <p className="not-filled-form-p">You must enter all the data</p>
+            {!loader ? (
+            <>
+                {isRatingOpened && (
+                    <Rating handleStarRating={handleStarRating}
+                            handleSettingComment={handleSettingComment}
+                            handleSubmit={handleSubmit}>
+                              <p className="product-title">Rate product {selectedProduct}</p>
+                    </Rating>
+                )}
+                {error && (
+                    <div className="not-filled-form-container">
+                        <p className="not-filled-form-p">You must enter all the data</p>
+                    </div>
+                )}
+            </>
+            ) : (
+                <div className="loader-container">
+                    <span className="loader"></span>
                 </div>
             )}
         </>

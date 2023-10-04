@@ -1,4 +1,3 @@
-
 import './App.css'
 import PollDog from "./components/PollDog.jsx";
 
