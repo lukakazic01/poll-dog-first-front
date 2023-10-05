@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './PollDog.css'
-import Dropdown from "./Dropdown.jsx";
-import Rating from "./Rating.jsx";
+import Dropdown from "../dropdown/Dropdown.jsx";
+import Rating from "../rating/Rating.jsx";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
