@@ -1,5 +1,5 @@
 import './App.css'
-import PollDog from "./components/polldog/PollDog.jsx";
+import PollDog from "./views/polldog/PollDog.jsx";
 
 function App() {
   return (
