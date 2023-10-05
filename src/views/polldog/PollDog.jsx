@@ -46,14 +46,12 @@ const BrandsComponent = () => {
             }
         }
         try {
-            const response = await axios.post('https://localhost:7070/PollDogAPI', {
+            await axios.post('https://localhost:7070/PollDogAPI', {
                 product: selectedProduct,
                 Survey_Comment: ratingComment,
                 brand: brand,
                 Survey_Star_Rating: selectedRating
             });
-
-            console.log(response.data);
             toast.success('Thank you for submitting review :)',{
                 position: "bottom-center",
                 autoClose: 3000,

@@ -4,10 +4,12 @@ import {
 import App from "../App.jsx";
 import Login from "../views/login/Login.jsx";
 
+
+
 const routes = createBrowserRouter([
     {
         path: "/",
-        element: <App />
+        element: <App />,
     },
     {
         path: "/login",
