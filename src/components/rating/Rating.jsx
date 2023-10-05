@@ -3,20 +3,10 @@ import React, {useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
-
 function Rating ({children, handleStarRating, handleSettingComment, handleSubmit}) {
-    const handleMouseLeaving = () => {
-        if(isStarSelected) return;
-        setCurrIndex(null)
-    }
 
-    const handleMouseOverStar = (i) => {
-        if(isStarSelected) return;
-        setCurrIndex(i)
-    }
     const [ratingComment, setRatingComment] = useState('');
     const [currIndex, setCurrIndex] = useState(0);
-    const [isStarSelected, setIsStarSelected] = useState(false);
     return (
         <>
             <div className="rating-container">
