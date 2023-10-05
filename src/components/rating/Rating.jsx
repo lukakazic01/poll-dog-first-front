@@ -42,6 +42,7 @@ function Rating ({children, handleStarRating, handleSettingComment, handleSubmit
                         </button>
                     </div>
                 </div>
+                <a href="http://127.0.0.1:5500/index.html" target="_blank" className="link-to-insights">Go to see insights</a>
             </div>
         </>
     );

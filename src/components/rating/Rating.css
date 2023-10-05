@@ -41,3 +41,13 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.link-to-insights {
+    text-decoration: none;
+    margin-top: 10px;
+    color: black;
+}
+
+.link-to-insights:hover {
+    color: crimson;
+}
